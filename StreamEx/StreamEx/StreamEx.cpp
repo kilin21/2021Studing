@@ -1,11 +1,38 @@
 ﻿// StreamEx.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 // first main function
 
+#include <stdio.h>
 #include <iostream>
 
-int main()
+struct my_variables
 {
-    std::cout << "Hello, World!\n";
+    int x;
+    int y;
+
+    void print()
+    {
+        printf("%d %d", x, y);
+    }
+};
+
+std::ostream &operator << (std::ostream & stream, my_variables obj)
+{
+    stream << obj.x << " " << obj.y << std::endl;
+
+    return stream;
+}
+
+void main()
+{
+    my_variables variables;
+
+    variables.x = 1;
+    variables.y = 2;
+
+    /*my_variables::print();*/
+
+    std::cout << variables << std::endl;
+
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
