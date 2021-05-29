@@ -1,11 +1,13 @@
 ﻿// StreamEx.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 // first main function
 
+#include <stdio.h>
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello, World!\n";
+    printf("This is c style! \n");
+    std::cout << "This is c++ style!" << std::endl;
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
