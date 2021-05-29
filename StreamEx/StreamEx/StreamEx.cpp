@@ -4,10 +4,35 @@
 #include <stdio.h>
 #include <iostream>
 
-int main()
+struct my_variables
 {
-    printf("This is c style! \n");
-    std::cout << "This is c++ style!" << std::endl;
+    int x;
+    int y;
+
+    void print()
+    {
+        printf("%d %d", x, y);
+    }
+};
+
+std::ostream &operator << (std::ostream & stream, my_variables obj)
+{
+    stream << obj.x << " " << obj.y << std::endl;
+
+    return stream;
+}
+
+void main()
+{
+    my_variables variables;
+
+    variables.x = 1;
+    variables.y = 2;
+
+    /*my_variables::print();*/
+
+    std::cout << variables << std::endl;
+
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
